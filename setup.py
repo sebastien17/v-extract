@@ -23,8 +23,8 @@ __location__ = os.path.join(os.getcwd(), os.path.dirname(
 
 # Change these settings according to your needs
 MAIN_PACKAGE = "vextract"
-DESCRIPTION = "None"
-LICENSE = "none"
+DESCRIPTION = "Video Extraction"
+LICENSE = "MIT"
 URL = "None"
 AUTHOR = "sebastien17"
 EMAIL = "sebastien.lautier@gmail.com"
@@ -39,7 +39,7 @@ CLASSIFIERS = ['Development Status :: 4 - Beta',
                'Programming Language :: Python']
 
 # Add here console scripts like ['hello_world = vextract.module:function']
-CONSOLE_SCRIPTS = []
+CONSOLE_SCRIPTS = ['extract = vextract.cmd_line:extract']
 
 # Versioneer configuration
 versioneer.VCS = 'git'
