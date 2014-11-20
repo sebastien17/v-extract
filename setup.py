@@ -18,6 +18,8 @@ import setuptools
 from setuptools.command.test import test as TestCommand
 from setuptools import setup
 
+from shutil import copy2 as _copy2
+
 __location__ = os.path.join(os.getcwd(), os.path.dirname(
     inspect.getfile(inspect.currentframe())))
 
@@ -206,3 +208,8 @@ def setup_package():
 
 if __name__ == "__main__":
     setup_package()
+    #Add manualy externa libs
+    print('External libs copy ...')
+    _copy2('vendors/opencv_ffmpeg2410.dll',sys.prefix + '/Scripts/opencv_ffmpeg2410.dll')
+    _copy2('vendors/cv2.pyd',sys.prefix + '/Lib/site-packages/cv2.pyd')
+    print('Done')

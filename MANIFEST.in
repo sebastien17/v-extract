@@ -4,3 +4,4 @@ include *.rst
 include tox.ini
 recursive-include vextract *.py *.c *.h *.pxd *.pyx
 recursive-include docs *.rst *.py
+graft vendors
