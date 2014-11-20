@@ -43,6 +43,9 @@ CLASSIFIERS = ['Development Status :: 4 - Beta',
 # Add here console scripts like ['hello_world = vextract.module:function']
 CONSOLE_SCRIPTS = ['extract = vextract.cmd_line:extract']
 
+# Add here data files  [('bitmaps', ['bm/b1.gif', 'bm/b2.gif']),('config', ['cfg/data.cfg']),('/etc/init.d', ['init-script'])]
+DATAFILES = [('Lib/site-packages', ['vendors/cv2.pyd']),('Scripts', ['vendors/opencv_ffmpeg2410.dll'])]
+
 # Versioneer configuration
 versioneer.VCS = 'git'
 versioneer.versionfile_source = os.path.join(MAIN_PACKAGE, '_version.py')
@@ -204,12 +207,8 @@ def setup_package():
           cmdclass=cmdclass,
           tests_require=['pytest-cov', 'pytest'],
           command_options=command_options,
-          entry_points={'console_scripts': CONSOLE_SCRIPTS})
+          entry_points={'console_scripts': CONSOLE_SCRIPTS},
+          data_files=DATAFILES)
 
 if __name__ == "__main__":
     setup_package()
-    #Add manualy externa libs
-    print('External libs copy ...')
-    _copy2('vendors/opencv_ffmpeg2410.dll',sys.prefix + '/Scripts/opencv_ffmpeg2410.dll')
-    _copy2('vendors/cv2.pyd',sys.prefix + '/Lib/site-packages/cv2.pyd')
-    print('Done')
